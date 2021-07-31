@@ -8,7 +8,7 @@ tasks:
       export FLASK_ENV=development
     init: |
       pip install -e .
-      pip install -r requirements.txt
+      pip install -r backend/requirements.txt
 #    command: |
 #      flask run
 
