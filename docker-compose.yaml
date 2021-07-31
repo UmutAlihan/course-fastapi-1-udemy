@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  db:
+    container_name: postgres
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: db_course
+      PGDATA: /data/postgres
+    volumes:
+    - postgres:/data/postgres
+    networks:
+      - postgres
+    ports:
+      - "5432:5432"
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: averneus@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: averneus
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+    - pgadmin:/root/.pgadmin
+    networks:
+      - postgres
+    ports:
+      - "8080:80"
+    
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+    postgres:
+    pgadmin:
+

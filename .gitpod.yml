@@ -8,9 +8,8 @@ tasks:
       export FLASK_ENV=development
     init: |
       pip install -e .
-      flask init-db
-    command: |
-      flask run
+#    command: |
+#      flask run
 
 vscode:
   extensions:
