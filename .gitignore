@@ -13,3 +13,4 @@ build/
 *.swp
 *~
 old/
+sql_app.db

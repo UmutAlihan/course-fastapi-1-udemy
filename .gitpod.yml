@@ -16,3 +16,4 @@ tasks:
 vscode:
   extensions:
     - ms-python.python
+    - eamodio.gitlens
