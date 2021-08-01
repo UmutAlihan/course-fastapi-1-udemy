@@ -2,8 +2,7 @@ from fastapi import FastAPI
 from core.config import settings
 from db.session import engine
 from db.base import Base, Job, User
-from apis.version1.route_users import api_router
-
+from apis.base import api_router
 
 def include_router(app):
     app.include_router(api_router)

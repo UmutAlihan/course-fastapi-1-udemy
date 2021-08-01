@@ -9,7 +9,7 @@ from db.repository.users import create_new_user
 router = APIRouter()
 
 
-@router.post("/users")
+@router.post("/")
 def create_user(user: UserCreate, db:Session=Depends(get_db)):
     user = create_new_user(user, db)
     return user
