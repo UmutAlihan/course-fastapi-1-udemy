@@ -1,0 +1,8 @@
+$!/bin/bash
+
+
+git status; sleep 10
+git add .;
+git status; sleep 10
+git commit -m "$@"
+git push origin master

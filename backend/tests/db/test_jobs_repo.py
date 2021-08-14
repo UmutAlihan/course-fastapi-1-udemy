@@ -5,7 +5,7 @@ from schemas.jobs import JobCreate
 from tests.utils.users import create_random_owner
 
 
-def test_retrieve_job_by_id(db_session:Session):
+def test_retreive_job_by_id(db_session:Session):
     title = "test title"
     company = "test company"
     company_url = "testcomp.com"
