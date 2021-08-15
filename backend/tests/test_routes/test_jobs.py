@@ -25,5 +25,8 @@ def test_retreive_job_by_id(client):
     }
 
     client.post("/job/create-job",json.dumps(data))
-    response = client.get("/job/")
+    response = client.get("/job/get/1")
+    assert response.status_code == 200
+    assert response.json()["title"] == "SDE 1 Yahoo"
+
     
