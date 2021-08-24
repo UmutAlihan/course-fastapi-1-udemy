@@ -6,4 +6,5 @@ python-dotenv
 pydantic[email]
 passlib[bcrypt]
 pytest
+pytest-cov # test coverage tool
 requests
