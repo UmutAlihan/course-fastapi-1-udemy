@@ -14,3 +14,8 @@ build/
 *~
 old/
 sql_app.db
+test_db.db
+../test_db.db
+.pytest_cache
+htmlcov
+.coverage
