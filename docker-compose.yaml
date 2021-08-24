@@ -10,7 +10,7 @@ services:
       POSTGRES_DB: db_course
       PGDATA: /data/postgres
     volumes:
-    - postgres:/data/postgres
+    - /workspace/fastapi-course-udemy/container-data/postgres:/data/postgres
     networks:
       - postgres
     ports:
@@ -24,7 +24,7 @@ services:
       PGADMIN_DEFAULT_PASSWORD: averneus
       PGADMIN_CONFIG_SERVER_MODE: 'False'
     volumes:
-    - pgadmin:/root/.pgadmin
+    - /workspace/fastapi-course-udemy/container-data/pgadmin:/root/.pgadmin
     networks:
       - postgres
     ports:
@@ -33,8 +33,3 @@ services:
 networks:
   postgres:
     driver: bridge
-
-volumes:
-    postgres:
-    pgadmin:
-

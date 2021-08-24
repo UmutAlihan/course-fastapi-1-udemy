@@ -4,8 +4,8 @@ from sqlalchemy.orm import Session
 from db.session import get_db
 from db.models.jobs import Job
 from schemas.jobs import JobCreate, ShowJob
-from db.repository.jobs import create_new_job, retreive_job
-
+from db.repository.jobs import create_new_job, retreive_job, list_jobs, update_job_by_id
+from typing import List
 
 router = APIRouter()
 
@@ -16,7 +16,7 @@ def create_job(job : JobCreate, db : Session = Depends(get_db)):
     return job
 
 
-@router.get(f"/get/{id}", response_model=ShowJob)
+@router.get("/get/{id}", response_model=ShowJob)
 def retreive_job_by_id(id: int, db:Session = Depends(get_db)):
     job = retreive_job(id=id, db=db)
     print(job)
@@ -24,3 +24,18 @@ def retreive_job_by_id(id: int, db:Session = Depends(get_db)):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                 detail=f"Job with id {id} does not exist")
     return job
+
+@router.get("/all", response_model=List[ShowJob])
+def retreive_all_jobs(db: Session = Depends(get_db)):
+    jobs = list_jobs(db=db)
+    return jobs
+
+
+@router.put("/update/{id}")
+def update_job(id:int, job:JobCreate, db:Session=Depends(get_db)):
+    owner_id = 1
+    message = update_job_by_id(id=id,  job=job, db=db, owner_id=owner_id)
+    if not message:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, 
+                            detail="Job with id {id} does not exist.")
+    return {"detail": "Successfully updated data."}
