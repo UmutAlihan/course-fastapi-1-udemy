@@ -10,12 +10,13 @@ tasks:
     init: |
       pip install -e .
       pip install -r backend/requirements.txt
-      docker-compose up -d
+      docker-compose up
+      gp sync-done setup
+  - name: Run webserver
+    init: gp sync-await setup
     command: |
-      sleep 5
       cd backend
       uvicorn main:app --reload
-
 vscode:
   extensions:
     - ms-python.python
