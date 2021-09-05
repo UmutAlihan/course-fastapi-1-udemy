@@ -10,7 +10,7 @@ tasks:
     init: |
       pip install -e .
       pip install -r backend/requirements.txt
-      docker-compose up
+      docker-compose up -d
       gp sync-done setup
   - name: Run webserver
     init: gp sync-await setup
