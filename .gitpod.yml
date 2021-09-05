@@ -1,22 +1,27 @@
 ports:
   - port: 5000
-    onOpen: open-preview
+    visibility: private
+  - port: 8080
+    visibility: public
+    onOpen: open-browser
+  - port: 8000
+    visibility: private
+  - port: 5432
+    visibility: public
 
 tasks:
-#  - before: |
-#      export FLASK_APP=flaskr
-#      export FLASK_ENV=development
-  - name: Setup & Prepare
+  - name: Setup
     init: |
       pip install -e .
       pip install -r backend/requirements.txt
       docker-compose up -d
       gp sync-done setup
-  - name: Run webserver
+  - name: Webserver
     init: gp sync-await setup
     command: |
       cd backend
       uvicorn main:app --reload
+
 vscode:
   extensions:
     - ms-python.python
