@@ -3,9 +3,11 @@ from core.config import settings
 from db.session import engine
 from db.base import Base, Job, User
 from apis.base import api_router
+from webapps.base import api_router as webapp_router
 
 def include_router(app):
     app.include_router(api_router)
+    app.include_router(webapp_router)
 
 def start_application():
     create_tables()

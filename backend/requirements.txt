@@ -10,3 +10,4 @@ pytest-cov # test coverage tool
 requests
 python-jose
 python-multipart
+jinja2
