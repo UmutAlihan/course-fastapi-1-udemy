@@ -10,6 +10,8 @@ tasks:
       pip install -e .
       pip install -r backend/requirements.txt
       docker-compose up -d
+      cd backend
+      uvicorn main:app --reload
 #    command: |
 #      flask run
 
