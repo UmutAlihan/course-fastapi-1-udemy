@@ -6,14 +6,15 @@ tasks:
 #  - before: |
 #      export FLASK_APP=flaskr
 #      export FLASK_ENV=development
-  - init: |
+  - name: Setup & Prepare
+    init: |
       pip install -e .
       pip install -r backend/requirements.txt
       docker-compose up -d
+    command: |
+      sleep 5
       cd backend
       uvicorn main:app --reload
-#    command: |
-#      flask run
 
 vscode:
   extensions:
