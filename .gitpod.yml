@@ -5,7 +5,7 @@ ports:
     visibility: public
     onOpen: open-browser
   - port: 8000
-    visibility: private
+    visibility: public
   - port: 5432
     visibility: public
 
@@ -20,6 +20,7 @@ tasks:
     init: gp sync-await setup
     command: |
       cd backend
+      sleep 5
       uvicorn main:app --reload
 
 vscode:
