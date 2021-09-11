@@ -20,8 +20,3 @@ def create_tables():
     Base.metadata.create_all(bind=engine)
 
 app = start_application()
-
-@app.get("/")
-def hello_api():
-    return {"detail": "Hello"}
-    
