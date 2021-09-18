@@ -11,8 +11,8 @@
         <div class="row">
             {% for job in jobs %}
                 <div class="col-lg-4 col-md-3 col-sm-10 mr-auto">
-                    {% with obj=obj %}
-                        {% include "components/cards.html" %}
+                    {% with obj=job %} <!-- job'u obj olarak veriyorusn burada-->
+                        {% include "components/card.html" %}
                     {% endwith %}
 
                     {% if loop.index %3 %}
