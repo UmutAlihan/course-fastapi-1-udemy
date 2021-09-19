@@ -11,8 +11,19 @@
         <form method="POST">
             <div class="mb-3">
                 <label>username</label>
-                <input type="text" required class="form-control" name="username"
+                <input type="text" required class="form-control" name="username" 
+                value="{{username}}" placeholder="username">
             </div>
+            <div class="mb-3">
+                <label>email</label>
+                <input type="email" required class="form-control" name="email" 
+                value="{{email}}" placeholder="email">
+            <div class="mb-3">
+                <label>password</label>
+                <input type="password" required class="form-control" name="password" 
+                value="{{password}}" placeholder="password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
     </div>

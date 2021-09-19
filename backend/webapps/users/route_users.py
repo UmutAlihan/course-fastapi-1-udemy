@@ -6,7 +6,7 @@ router = APIRouter(include_in_schema=False)
 templates = Jinja2Templates(directory="templates")
 
 
-@router.get("/register/")
+@router.get("/register")
 def register(request:Request):
     return templates.TemplateResponse("users/register.html", 
                                      {"request":request})
