@@ -6,3 +6,4 @@ git add .;
 git status; sleep 10
 git commit -m "$@"
 git push origin main
+git log --oneline
