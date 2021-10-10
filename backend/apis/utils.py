@@ -1,6 +1,6 @@
 from fastapi.security import OAuth2
 from fastapi.openapi.models import OAuthFlow as OAuthFlowsModel
-from fastapi import Request, HTTPException, status
+from fastapi import Request, HTTPException, status, HTTP_401_UNAUTHORIZED
 from fastapi.security.utils import get_authorization_scheme_param
 from typing import Optional, Dict
 
