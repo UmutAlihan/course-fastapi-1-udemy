@@ -1,6 +1,6 @@
 Repo for learning fullstack webapp development by developing along with [Udemy Course](https://www.udemy.com/course/fastapi-course/) instructor.
 
-- User FastAPI, SQLAlchemy, Bootstrap and Jinja2 as techstack 
+- Used FastAPI, SQLAlchemy, Bootstrap and Jinja2 templates as techstack 
 - and gitpod as cloud IDE 
 
 
