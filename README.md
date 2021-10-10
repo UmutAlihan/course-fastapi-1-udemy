@@ -1,4 +1,4 @@
-Repo for learning FastAPI course by following an Udemy course
+Repo for learning fullstack webapp development using FastAPI, SQLAlchemy, Bootstrap and Jinja2 as techstack by developing along with [Udemy Course](https://www.udemy.com/course/fastapi-course/) instructor.
 
 
 ## Notes
